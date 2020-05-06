@@ -1,0 +1,10 @@
+$scope.deleteRecord=function(){
+							var promise=$http.delete('http://exampleapi.somee.com/api/person/'+$scope.Person_Id);
+							promise.success(function (data, status, headers, config) {
+								$scope.data=data;
+								resetOptions();
+							});
+							promise.error(function (data, status, headers, config) {
+								alert("error occured while sending ajax request");
+							});
+						}
